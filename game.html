@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    {{> head}}
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div id="myBoard" style="width: 700px"></div>
+        <div style="display:flex; flex-direction: column; justify-content: space-evenly;">
+            <div style="background-color: cyan; flex:2">
+                <label>Status:</label>
+                <div id="status"></div>
+                <label>PGN:</label>
+                <div id="pgn"></div>
+            </div>
+
+            <div style="background-color: antiquewhite; flex:1" id="question-container">
+                <div id="exercise-container"></div>
+                <p id="result"></p>
+                <p id="timer"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let playerColor = '{{color}}';
+        console.log('Playing as ' + playerColor);
+    </script>
+    <script src="/public/js/index.js"></script>
+</body>
+
+</html>

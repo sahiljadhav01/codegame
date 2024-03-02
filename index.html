@@ -1,67 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play and Learn</title>
-    <style>
-        
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-image: url('image1.jpeg'); /* Replace 'background.jpg' with the path to your background image */
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        .container {
-            padding: 20px;
-            background-color: rgba(222, 210, 210, 0.7); /* Adding a semi-transparent white background to improve readability */
-            border-radius: 20px;
-            position: relative;
-        }
-        h1 {
-            font-size: 36px;
-        }
-        p {
-            font-size: 18px;
-        }
-        .start-button {
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #530aee;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        .start-button:hover {
-            background-color: #0056b3;
-        }
-        .small-image {
-            position: absolute;
-            left: 100%;
-            top: 150%;
-            transform: translateY(-50%);
-            width: 300px; /* Adjust size as needed */
-            height: 300px; /* Adjust size as needed */
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img src="bear.jpg" alt="Small Image" class="small-image">
-        <h1>Lets play and learn</h1>
-        <p>New way to learn with</p>
-        <button class="start-button" onclick="location.href='page2.html'">START</button>
-    </div>
-</body>
+<html>
+    <head>
+        {{> head}}
+    </head>
+    <body>
+        <h2>Game code</h2>
+        <input type="text" id="codeInput">
+        <button id="createGame">Create game</button>
+        <button id="joinGame">Join game</button>
+        <div style="color: red" id="errorMessage"></div>
+
+        <script>
+            $('#createGame').on('click', function() {
+                window.location.replace('/white?code=' + $('#codeInput').val());
+            });
+            $('#joinGame').on('click', function() {
+                window.location.replace('/black?code=' + $('#codeInput').val());
+            });
+
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('error') == 'invalidCode') {
+                $('#errorMessage').text('Invalid invite code');
+            }
+        </script>
+    </body>
 </html>
