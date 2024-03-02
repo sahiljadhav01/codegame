@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Attributes and Elements Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: black; /* Set background color to black */
+            color: white; /* Set default text color to white */
+        }
+        h2 {
+            color: red; /* Set question text color to red */
+        }
+        p {
+            color: green; /* Set answer text color to green */
+        }
+        .example {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #333; /* Set example box background color to dark gray */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Attributes and Elements Tutorial</h1>
+    </header>
+    <section>
+        <h2>HTML Attributes and Their Uses</h2>
+        <p>HTML attributes provide additional information about HTML elements. Here are some commonly used attributes:</p>
+        <ul>
+            <li><strong>href:</strong> Specifies the URL of the link destination.</li>
+            <li><strong>src:</strong> Specifies the URL of the image, audio, video, or script file.</li>
+            <li><strong>alt:</strong> Provides alternative text for images if the image cannot be displayed.</li>
+            <li><strong>title:</strong> Specifies extra information about an element, often displayed as a tooltip.</li>
+            <li><strong>class:</strong> Assigns one or more class names to an element for styling with CSS.</li>
+            <li><strong>id:</strong> Specifies a unique identifier for an element, used for scripting or styling purposes.</li>
+            <li><strong>style:</strong> Sets inline CSS styles for an element.</li>
+            <li><strong>target:</strong> Specifies where to open the linked document when clicked (e.g., "_blank" for a new tab).</li>
+        </ul>
+    </section>
+    <section>
+        <h2>HTML Elements and Their Uses</h2>
+        <p>HTML provides various elements to structure content on a webpage. Here are some commonly used elements:</p>
+        <ul>
+            <li><strong>&lt;h1&gt; - &lt;h6&gt;:</strong> Heading elements for specifying different levels of headings.</li>
+            <li><strong>&lt;p&gt;:</strong> Paragraph element for containing text paragraphs.</li>
+            <li><strong>&lt;a&gt;:</strong> Anchor element for creating hyperlinks.</li>
+            <li><strong>&lt;img&gt;:</strong> Image element for embedding images.</li>
+            <li><strong>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;:</strong> Elements for creating unordered and ordered lists with list items.</li>
+            <li><strong>&lt;div&gt;:</strong> Division element for grouping content and applying styles.</li>
+            <li><strong>&lt;span&gt;:</strong> Inline element for applying styles or scripting to a specific part of text.</li>
+            <li><strong>&lt;input&gt;:</strong> Input element for accepting user input, such as text, checkboxes, or radio buttons.</li>
+            <li><strong>&lt;button&gt;:</strong> Button element for creating clickable buttons.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Adding Audio and Video Files in HTML</h2>
+        <p>To add audio and video files to a webpage, you can use the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> elements respectively.</p>
+        <p><strong>Example of adding an audio file:</strong></p>
+        <div class="example">
+            <pre>
+&lt;audio controls&gt;
+    &lt;source src="audio_file.mp3" type="audio/mpeg"&gt;
+    Your browser does not support the audio element.
+&lt;/audio&gt;
+            </pre>
+        </div>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>&lt;audio&gt;</code>: Defines an audio player.</li>
+            <li><code>controls</code>: Adds playback controls (play, pause, volume) to the audio player.</li>
+            <li><code>&lt;source&gt;</code>: Specifies the audio file to be played, with the <code>src</code> attribute containing the URL of the audio file and the <code>type</code> attribute indicating the MIME type of the audio file.</li>
+            <li>The content inside the <code>&lt;audio&gt;</code> element is fallback content displayed if the browser does not support the audio element.</li>
+        </ul>
+        <p><strong>Example of adding a video file:</strong></p>
+        <div class="example">
+            <pre>
+&lt;video controls width="400"&gt;
+    &lt;source src="video_file.mp4" type="video/mp4"&gt;
+    Your browser does not support the video element.
+&lt;/video&gt;
+            </pre>
+        </div>
+        <p><strong>Explanation:</strong></p>
+        <ul>
+            <li><code>&lt;video&gt;</code>: Defines a video player.</li>
+            <li><code>controls</code>: Adds playback controls (play, pause, volume) to the video player.</li>
+            <li><code>width</code>: Sets the width of the video player (in pixels).</li>
+            <li><code>&lt;source&gt;</code>: Specifies the video file to be played, with the <code>src</code> attribute containing the URL of the video file and the <code>type</code> attribute indicating the MIME type of the video file.</li>
+            <li>The content inside the <code>&lt;video&gt;</code> element is fallback content displayed if the browser does not support the video element.</li>
+        </ul>
+    </section>
+</body>
+</html>
