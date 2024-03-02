@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Basic Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: black;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+            color: red;
+        }
+        .answer {
+            color: white;
+        }
+        #quizButton {
+            background-color: yellow;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Java Basic Questions</h1>
+    <div class="questions">
+        <div class="question">
+            <p>1. What is the default value of byte variable in Java?</p>
+            <p class="answer"><strong>Answer:</strong> The default value of a byte variable in Java is 0.</p>
+        </div>
+        
+        <div class="question">
+            <p>2. What is the result of 7 % 3 in Java?</p>
+            <p class="answer"><strong>Answer:</strong> The result of 7 % 3 in Java is 1. The % operator returns the remainder of the division.</p>
+        </div>
+        
+        <div class="question">
+            <p>3. What is the use of 'final' keyword in Java?</p>
+            <p class="answer"><strong>Answer:</strong> In Java, the 'final' keyword is used to declare constants, restrict method overriding, and prevent inheritance.</p>
+        </div>
+
+        <div class="question">
+            <p>4. What is the difference between '==' and '.equals()' method in Java?</p>
+            <p class="answer"><strong>Answer:</strong> The '==' operator is used to compare primitive data types and memory addresses of objects, whereas the '.equals()' method is used to compare the content or values of objects.</p>
+        </div>
+
+        <div class="question">
+            <p>5. What is the purpose of the 'static' keyword in Java?</p>
+            <p class="answer"><strong>Answer:</strong> In Java, the 'static' keyword is used to create variables and methods that belong to the class rather than instances of the class. It allows these variables and methods to be accessed without creating an instance of the class.</p>
+        </div>
+
+        <div class="question">
+            <p>6. What is the difference between 'String' and 'StringBuilder' in Java?</p>
+            <p class="answer"><strong>Answer:</strong> String objects are immutable in Java, meaning their values cannot be changed after they are created. StringBuilder, on the other hand, is mutable, allowing for the modification of its value without creating a new object.</p>
+        </div>
+
+        <div class="question">
+            <p>7. What is the difference between an interface and an abstract class in Java?</p>
+            <p class="answer"><strong>Answer:</strong> An interface in Java can only contain abstract methods and cannot have method implementations, while an abstract class can have both abstract and non-abstract methods. Additionally, a class can implement multiple interfaces but can only extend one abstract class.</p>
+        </div>
+
+        <div class="question">
+            <p>8. What is method overloading in Java?</p>
+            <p class="answer"><strong>Answer:</strong> Method overloading in Java allows a class to have multiple methods with the same name but with different parameters. The methods must have different parameter lists (number of parameters or data types of parameters).</p>
+        </div>
+
+        <div class="question">
+            <p>9. What is method overriding in Java?</p>
+            <p class="answer"><strong>Answer:</strong> Method overriding in Java occurs when a subclass provides a specific implementation of a method that is already defined in its superclass. The method signature (name, return type, and parameter list) must be the same in both the superclass and subclass.</p>
+        </div>
+
+        <div class="question">
+            <p>10. What is the difference between 'public', 'protected', 'private', and 'default' access modifiers in Java?</p>
+            <p class="answer"><strong>Answer:</strong> 'public' access modifier allows access from any other class, 'protected' allows access within the same package or by subclasses, 'private' allows access only within the same class, and 'default' (no modifier) allows access within the same package but not outside of it.</p>
+        </div>
+
+        <div class="question">
+            <p>11. What is the purpose of the 'this' keyword in Java?</p>
+            <p class="answer"><strong>Answer:</strong> The 'this' keyword in Java refers to the current instance of the class. It can be used to differentiate between instance variables and parameters with the same name, to invoke one constructor from another in constructors chaining, and to pass the current object as a parameter to other methods.</p>
+        </div>
+
+        <div class="question">
+            <p>12. What is the difference between 'ArrayList' and 'LinkedList' in Java?</p>
+            <p class="answer"><strong>Answer:</strong> ArrayList is implemented as a resizable array, while LinkedList is implemented as a doubly linked list. ArrayList provides fast iteration and random access but slower insertion and deletion of elements, whereas LinkedList provides fast insertion and deletion but slower iteration and random access.</p>
+        </div>
+
+        <div class="question">
+            <p>13. What is the purpose of the 'super' keyword in Java?</p>
+            <p class="answer"><strong>Answer:</strong> The 'super' keyword in Java is used to refer to the immediate parent class object. It can be used to access methods and variables of the superclass, to invoke superclass constructor from subclass constructor, and to differentiate between superclass and subclass variables and methods.</p>
+        </div>
+
+        <div class="question">
+            <p>14. What is the difference between '==', '.equals()', and 'compareTo()' methods in Java?</p>
+            <p class="answer"><strong>Answer:</strong> '==' is used to compare primitive data types and memory addresses of objects, '.equals()' method is used to compare the content or values of objects for equality, and 'compareTo()' method is used to compare objects for ordering, typically used for sorting objects in collections.</p>
+        </div>
+
+        <div class="question">
+            <p>15. What is the purpose of the 'instanceof' operator in Java?</p>
+            <p class="answer"><strong>Answer:</strong> The 'instanceof' operator in Java is used to test whether an object is an instance of a particular class or interface. It returns true if the object is an instance of the specified type or its subclasses/interfaces, otherwise false.</p>
+        </div>
+
+        <div class="question">
+            <p>16. What are constructors in Java?</p>
+            <p class="answer"><strong>Answer:</strong> Constructors in Java are special methods used for initializing objects. They have the same name as the class and do not have a return type. Constructors can be parameterized or default (no-args).</p>
+        </div>
+
+        <div class="question">
+            <p>17. What is the purpose of the 'try', 'catch', 'finally', and 'throw' keywords in Java?</p>
+            <p class="answer"><strong>Answer:</strong> 'try' block is used to enclose the code that may throw exceptions, 'catch' block is used to handle the exception that occurred in the try block, 'finally' block is used to execute code regardless of whether an exception is thrown or not, and 'throw' keyword is used to manually throw an exception.</p>
+        </div>
+
+        <div class="question">
+            <p>18. What are access modifiers in Java?</p>
+            <p class="answer"><strong>Answer:</strong> Access modifiers in Java are keywords used to set the accessibility of classes, variables, methods, and constructors. They include 'public', 'protected', 'private', and default (no modifier).</p>
+        </div>
+
+        <div class="question">
+            <p>19. What is the purpose of the 'static' block in Java?</p>
+            <p class="answer"><strong>Answer:</strong> The 'static' block in Java is used for static initialization of a class. It is executed only once when the class is loaded into memory, before the execution of the main method or creation of objects of that class.</p>
+        </div>
+
+        <div class="question">
+            <p>20. What is method hiding in Java?</p>
+            <p class="answer"><strong>Answer:</strong> Method hiding in Java occurs when a subclass defines a static method with the same signature as a static method in its superclass. It hides the superclass method rather than overriding it.</p>
+        </div>
+    </div>
+    <button id="quizButton" onclick="window.open('quizjava.html', '_self')">Play Quiz</button>
+</body>
+</html>
