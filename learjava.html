@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Java</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            color: #555;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+            font-size: 16px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .learn-more-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .learn-more-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learn Java</h1>
+    </header>
+    <nav>
+        <a href="#what_is_java">What is Java?</a>
+        <a href="#why_use_java">Why Use Java?</a>
+        <a href="#java_install">Java Install</a>
+        <a href="#java_quickstart">Java Quickstart</a>
+        <a href="#java_syntax">Java Syntax</a>
+        <a href="#main_method">The main Method</a>
+    </nav>
+    <section id="what_is_java">
+        <h2>What is Java?</h2>
+        <p>Java is a high-level, object-oriented programming language developed by Sun Microsystems (now owned by Oracle Corporation). It was designed to be platform-independent, meaning that Java programs can run on any device that has a Java Virtual Machine (JVM) installed.</p>
+        <p>One of the key features of Java is its "write once, run anywhere" principle. This means that once a Java program is compiled, it can be executed on any platform without recompilation, as long as the platform has a compatible JVM.</p>
+    </section>
+    <section id="why_use_java">
+        <h2>Why Use Java?</h2>
+        <p>There are several reasons to use Java:</p>
+        <ul>
+            <li><strong>Platform Independence:</strong> Java programs can run on any device with a JVM, making them highly portable.</li>
+            <li><strong>Object-Oriented:</strong> Java supports the principles of object-oriented programming, such as encapsulation, inheritance, and polymorphism.</li>
+            <li><strong>Robustness:</strong> Java has features like automatic memory management (garbage collection) and exception handling, which make it more robust and less prone to errors.</li>
+            <li><strong>Security:</strong> Java's security features, such as bytecode verification, help in creating secure applications.</li>
+            <li><strong>Scalability:</strong> Java's scalability allows it to be used for small applications as well as large enterprise systems.</li>
+        </ul>
+    </section>
+    <section id="java_install">
+        <h2>Java Install</h2>
+        <p>To start programming in Java, you need to install the Java Development Kit (JDK) on your computer:</p>
+        <ol>
+            <li>Go to the official Java website (https://www.oracle.com/java/).</li>
+            <li>Download the appropriate JDK version for your operating system (Windows, macOS, or Linux).</li>
+            <li>Run the installer and follow the installation instructions.</li>
+            <li>Once installed, set up the JAVA_HOME environment variable and add the JDK's bin directory to the system's PATH variable.</li>
+        </ol>
+    </section>
+    <section id="java_quickstart">
+        <h2>Java Quickstart</h2>
+        <p>To quickly start writing Java programs, follow these steps:</p>
+        <ol>
+            <li>Choose a text editor or an Integrated Development Environment (IDE) for writing Java code. Popular choices include Visual Studio Code, IntelliJ IDEA, and Eclipse.</li>
+            <li>Write your Java code in a .java file using the appropriate syntax.</li>
+            <li>Compile the Java code using the Java compiler (javac) to generate bytecode.</li>
+            <li>Run the compiled bytecode using the Java Virtual Machine (java).</li>
+        </ol>
+    </section>
+    <section id="java_syntax">
+        <h2>Java Syntax</h2>
+        <p>Java syntax is similar to C and C++, making it easy for programmers with experience in those languages to learn Java. Here are some key syntax features:</p>
+        <ul>
+            <li>Java programs are organized into classes, which contain methods, variables, constructors, and other components.</li>
+            <li>Java is case-sensitive, meaning that variables, class names, and method names must be spelled consistently with the correct capitalization.</li>
+            <li>Statements in Java are terminated by semicolons (;).</li>
+            <li>Java uses curly braces ({}) to define blocks of code, such as method bodies and control structures.</li>
+            <li>Comments in Java can be single-line (//) or multi-line (/* */), and they are ignored by the compiler.</li>
+        </ul>
+    </section>
+    <section id="main_method">
+        <h2>The main Method</h2>
+        <p>In Java, the main method is the entry point of any Java program. It has the following syntax:</p>
+        <pre>
+            <code>
+public class Main {
+    public static void main(String[] args) {
+        // Your code here
+    }
+}
+            </code>
+        </pre>
+        <p>The main method is where the program starts executing. It must be declared as public, static, and void. The args parameter allows you to pass command-line arguments to your Java program.</p>
+    </section>
+    <div class="button-container">
+        <button class="learn-more-button" onclick="window.location.href='java2.html'">Learn More in Java</button>
+    </div>
+</body>
+</html>
