@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ten HTML Questions Explained</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black; /* Changed background color to black */
+        margin: 0;
+        padding: 20px;
+        color: white; /* Changed text color to white */
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #000000;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        color: red; /* Changed question color to red */
+    }
+    p {
+        color: #666;
+    }
+    .next-step-button {
+        background-color: yellow;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>1. What is HTML?</h2>
+    <p>HTML, or Hypertext Markup Language, is the standard language used to create and design documents on the World Wide Web. It provides the structure and framework for webpages by using a system of tags and attributes to define the various elements within a document. Here's a deeper explanation of HTML:</p>
+
+    <h2>2. What is CSS?</h2>
+    <p>CSS, or Cascading Style Sheets, is a style sheet language used to describe the presentation of a document written in HTML or XML (including XML dialects like SVG or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media. It enables developers to control the layout, colors, fonts, spacing, and other visual aspects of webpages, thereby enhancing the design and user experience. Here's a deeper explanation of CSS:
+
+        Separation of Content and Presentation: One of the key principles of web development is the separation of content (HTML) from presentation (CSS). This separation allows developers to maintain cleaner, more maintainable code. HTML focuses on the structure and semantics of the content, while CSS is responsible for styling and layout.
+        
+        Selectors and Declarations: CSS works by selecting HTML elements and applying styles to them. Selectors are patterns that match elements in an HTML document, and declarations are key-value pairs that define the style to be applied. </p>
+
+    <h2>3. What is the box model in CSS?</h2>
+    <p>The box model is a fundamental concept in CSS (Cascading Style Sheets) that describes the layout and rendering of elements on a webpage as rectangular boxes.
+         Each HTML element is considered a box, and the box model defines properties such as width, height, padding, border, and margin that determine the size, spacing,
+          and positioning of these boxes relative to each other. Understanding the box model is crucial for creating well-designed and responsive web layouts.
+           Here's a breakdown of the components of the box model:
+<br>
+        Content: This is the innermost part of the box and represents the actual content of the element, such as text, images, or other HTML elements. The content area's dimensions are determined by the width and height properties.
+        
+        Padding: Padding is the space between the content area and the element's border. It is defined using the padding property and can be set individually for each side (top, right, bottom, left) or using shorthand notation to specify all sides at once. Padding adds space inside the border and increases the overall size of the box.
+        
+        Border: The border surrounds the padding and content area and is defined using the border property. It can have different styles (solid, dashed, dotted, etc.), widths, and colors. Borders provide visual separation between elements and help define their boundaries.
+        
+        Margin: Margin is the space between the border of the element and its neighboring elements. It is defined using the margin property and can also be set individually for each side or using shorthand notation. Margin creates space around the outside of the box and affects the positioning of the element relative to other elements on the page.
+        When you set the width and height of an element in CSS, you're specifying the dimensions of the content area only. The total size of the element, including padding, border, and margin, is calculated by adding the content width/height to the padding, border, and margin widths/heights.
+
+For example, if you set the width of an element to 200px, and then add 10px of padding, a 2px solid border, and 20px of margin, the total width of the element will be 200px + 10px (left padding) + 10px (right padding) + 2px (left border) + 2px (right border) + 20px (left margin) + 20px (right margin) = 264px.</p>
+
+    <h2>4. What are CSS selectors?</h2>
+    <p>
+        CSS selectors are patterns used to select and style HTML elements based on various criteria such as element type, class, ID, attributes, or their relationships with other elements in the document tree. CSS selectors allow developers to target specific elements or groups of elements and apply styles to them. Here are some common CSS selectors:
+        
+        Element Selector: Selects all instances of a specific HTML element. It is represented by the element's name without any prefix or suffix
+        Class Selector: Selects elements based on their class attribute. It is represented by a dot (.) followed by the class name
+        ID Selector: Selects a single element based on its ID attribute. It is represented by a hash (#) followed by the ID name
+        Attribute Selector: Selects elements based on the presence or value of their attributes. It is represented by square brackets ([]), with the attribute name optionally followed by a value.
+        
+    
+    </p>
+
+    <h2>5. Explain the difference between margin and padding in CSS.</h2>
+    <p>Margin is the space outside an element's border, used to create space between the element and other elements on the page. Padding is the space between an element's content and its border, affecting the element's internal layout.</p>
+
+    <h2>6. What is a CSS pseudo-class?</h2>
+    <p>A CSS pseudo-class is a keyword added to a selector that specifies a special state or condition of the selected element. Pseudo-classes allow developers to style elements based on user interaction.</p>
+
+    <h2>7. Explain the difference between inline, block, and inline-block elements in CSS.</h2>
+    <p>Inline elements flow along with the surrounding text, block elements start on a new line and take up the full width available, and inline-block elements combine characteristics of both inline and block elements.</p>
+
+    <h2>8. What is the purpose of the CSS 'float' property?</h2>
+    <p>The CSS 'float' property is used to align elements horizontally within their containing element. It is commonly used for creating layouts where elements can float next to each other.</p>
+
+    <h2>9. Explain the concept of CSS specificity.</h2>
+    <p>CSS specificity is a set of rules that determine which styles are applied to an element when multiple conflicting CSS rules exist. Specificity is based on the type of selector used.</p>
+
+    <h2>10. What is the CSS 'position' property used for?</h2>
+    <p>The CSS 'position' property is used to control the positioning of elements on a webpage. It determines how an element is positioned relative to its containing element or the browser window.</p>
+</div>
+
+<button class="next-step-button" onclick="window.location.href='learncss2.html'">Move to the next step</button>
+
+</body>
+</html>

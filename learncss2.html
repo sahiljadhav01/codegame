@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <style>
+        /* CSS Syntax */
+        h1 {
+            color: blue;
+            font-size: 24px;
+        }
+
+        /* CSS Properties */
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 20px;
+            float: left;
+        }
+
+        /* CSS Selectors */
+        p:first-child {
+            color: red;
+        }
+
+        /* CSS Functions */
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.5);
+            border-radius: 50%;
+        }
+
+        /* CSS Animatable */
+        .animate {
+            transition: transform 0.5s ease;
+        }
+
+        .animate:hover {
+            transform: scale(1.2);
+        }
+
+        /* CSS Aural */
+        .aural {
+            voice-family: "Alex", sans-serif;
+        }
+
+        /* CSS Web Safe Fonts */
+        .web-safe-font {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* CSS Units */
+        .unit-example {
+            width: 50%;
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid black;
+            float: left;
+        }
+
+        /* Px to Em Conversion */
+        .em-example {
+            font-size: 1.5em;
+        }
+
+        /* CSS Colors */
+        .color-example {
+            background-color: rgb(255, 0, 0);
+            color: #00ff00;
+        }
+
+        /* CSS Default Values */
+        .default-example {
+            margin: auto; /* default value */
+        }
+
+        /* CSS Entities */
+        .entity-example::before {
+            content: "\2611"; /* checkmark */
+        }
+
+        /* Clearfix */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Basics</h1>
+
+    <!-- CSS Syntax -->
+    <div class="box">
+        <p>CSS Syntax Example: <br> h1 { color: blue; font-size: 24px; }</p>
+    </div>
+
+    <!-- CSS Properties -->
+    <div class="box">
+        <p>CSS Properties Example: <br> .box { width: 200px; height: 200px; background-color: yellow; border: 2px solid black; margin: 20px; padding: 20px; }</p>
+    </div>
+
+    <!-- CSS Selectors -->
+    <div class="clearfix"></div>
+    <p>First Paragraph</p>
+    <p>Second Paragraph</p>
+
+    <!-- CSS Functions -->
+    <div class="circle"></div>
+    <p>.circle { background-color: rgba(255, 0, 0, 0.5); border-radius: 50%; }</p>
+
+    <!-- CSS Animatable -->
+    <div class="box animate"></div>
+    <p>.animate { transition: transform 0.5s ease; }<br>.animate:hover { transform: scale(1.2); }</p>
+
+    <!-- CSS Aural -->
+    <div class="clearfix"></div>
+    <p class="aural">This text is in Aural style.</p>
+    <p>.aural { voice-family: "Alex", sans-serif; }</p>
+
+    <!-- CSS Web Safe Fonts -->
+    <p class="web-safe-font">This text uses web safe fonts.</p>
+    <p>.web-safe-font { font-family: Arial, Helvetica, sans-serif; }</p>
+
+    <!-- CSS Units -->
+    <div class="unit-example">Example using percentages and pixels.</div>
+    <p>.unit-example { width: 50%; padding: 20px; margin: 10px; border: 2px solid black; }</p>
+
+    <!-- Px to Em Conversion -->
+    <div class="em-example">Example using em units for font-size.</div>
+    <p>.em-example { font-size: 1.5em; }</p>
+
+    <!-- CSS Colors -->
+    <div class="color-example">Example using RGB and Hex colors.</div>
+    <p>.color-example { background-color: rgb(255, 0, 0); color: #00ff00; }</p>
+
+    <!-- CSS Default Values -->
+    <div class="default-example">Example using default margin.</div>
+    <p>.default-example { margin: auto; }</p>
+
+    <!-- CSS Entities -->
+    <p class="entity-example">Checkmark: </p>
+    <p>.entity-example::before { content: "\2611"; }</p>
+
+    <!-- Additional Content -->
+    <div class="clearfix"></div>
+    <div style="margin-top: 20px;">
+        <h2>Additional Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula ante vitae sem euismod lacinia.</p>
+        <p>Sed at massa a purus rhoncus ullamcorper. Curabitur efficitur nibh id tellus sollicitudin vehicula.</p>
+        <p>Phasellus tempor urna in mi ultricies, eu luctus nunc dignissim. Sed eget lectus condimentum, rhoncus leo vel, vulputate nisl.</p>
+    </div>
+
+</body>
+</html>

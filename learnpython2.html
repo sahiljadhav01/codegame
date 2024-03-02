@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Syntax Explained</title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black; /* Set background color to black */
+            color: white; /* Set text color to white */
+            margin: 20px; /* Add some margin for better appearance */
+            padding: 0; /* Remove default padding */
+        }
+        h1 {
+            color: red; /* Set heading color to red */
+        }
+        code {
+            color: yellow; /* Set code snippet color to yellow */
+        }
+        .section {
+            margin-bottom: 20px; /* Add margin between sections */
+        }
+        .quiz-button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page title -->
+    <h1>Python Syntax Explained</h1>
+
+    <!-- Section for Variables and Data Types -->
+    <div class="section">
+        <h2>Variables and Data Types:</h2>
+        <!-- Code snippet for Variables and Data Types -->
+        <pre><code>
+x = 5
+y = 3.14
+name = "John"
+my_list = [1, 2, 3]
+my_tuple = (4, 5, 6)
+my_dict = {"key": "value"}
+        </code></pre>
+    </div>
+
+    <!-- Section for Control Structures -->
+    <div class="section">
+        <h2>Control Structures:</h2>
+        <!-- Code snippet for Control Structures -->
+        <pre><code>
+if x > 0:
+    print("Positive")
+elif x == 0:
+    print("Zero")
+else:
+    print("Negative")
+
+for i in range(5):
+    print(i)
+
+while True:
+    response = input("Enter 'quit' to exit: ")
+    if response == 'quit':
+        break
+    else:
+        continue
+        </code></pre>
+    </div>
+
+    <!-- Section for Functions -->
+    <div class="section">
+        <h2>Functions:</h2>
+        <!-- Code snippet for Functions -->
+        <pre><code>
+def greet(name):
+    return "Hello, " + name
+
+print(greet("Alice"))
+
+def multiply(x, y=2):
+    return x * y
+
+print(multiply(3))
+print(multiply(3, 4))
+        </code></pre>
+    </div>
+
+    <!-- Section for Classes and Objects -->
+    <div class="section">
+        <h2>Classes and Objects:</h2>
+        <!-- Code snippet for Classes and Objects -->
+        <pre><code>
+class Car:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def display_info(self):
+        print(f"Car: {self.make} {self.model}")
+
+car1 = Car("Toyota", "Camry")
+car1.display_info()
+        </code></pre>
+    </div>
+
+    <!-- Section for Input and Output -->
+    <div class="section">
+        <h2>Input and Output:</h2>
+        <!-- Code snippet for Input and Output -->
+        <pre><code>
+name = input("Enter your name: ")
+print("Hello, " + name)
+
+print("Hello, World!")
+        </code></pre>
+    </div>
+
+    <!-- Button to play a quiz -->
+    <button class="quiz-button" onclick="window.open('quiz.html', '_blank')">Play a Quiz on this Topic</button>
+</body>
+</html>

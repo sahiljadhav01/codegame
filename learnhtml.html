@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Terminology Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: black; /* Set background color to black */
+            color: white; /* Set default text color to white */
+        }
+        h2 {
+            color: red; /* Set question text color to red */
+        }
+        p {
+            color: green; /* Set answer text color to green */
+        }
+        .example {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #333; /* Set example box background color to dark gray */
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .learn-basic-html-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Terminology Tutorial</h1>
+    </header>
+    <section>
+        <h2>HTML Terms</h2>
+        <p>Here are some common terms used in HTML:</p>
+        <ul>
+            <li><strong>Tag:</strong> A tag is an element in HTML that defines the structure and content of a webpage. Tags are enclosed in angle brackets, e.g., &lt;tag&gt;.</li>
+            <li><strong>Element:</strong> An element consists of a pair of tags along with the content enclosed within them. It represents a specific piece of content on a webpage.</li>
+            <li><strong>Attribute:</strong> Attributes provide additional information about an element. They are specified within the opening tag of an element and are written as name-value pairs, e.g., attribute="value".</li>
+            <li><strong>HTML Document:</strong> An HTML document is a file that contains HTML code. It typically consists of a series of nested elements that define the structure and content of a webpage.</li>
+            <li><strong>DOCTYPE:</strong> The DOCTYPE declaration specifies the version of HTML used in the document and helps browsers to render the page correctly.</li>
+            <li><strong>HTML5:</strong> HTML5 is the latest version of HTML, introducing new elements, attributes, and features for web development.</li>
+            <li><strong>Semantic Elements:</strong> Semantic elements provide meaning to the content they enclose, making it easier for search engines and screen readers to interpret the page. Examples include <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;article&gt;</code>.</li>
+            <li><strong>Inline vs. Block Elements:</strong> Inline elements flow within the text and do not start on a new line, while block elements start on a new line and take up the full width available. Examples of inline elements include <code>&lt;span&gt;</code> and <code>&lt;a&gt;</code>, while examples of block elements include <code>&lt;div&gt;</code> and <code>&lt;p&gt;</code>.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Example Code</h2>
+        <p>Below is an example of HTML code with explanations:</p>
+        <div class="example">
+            <p><strong>HTML Code:</strong></p>
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Example Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;section id="about"&gt;
+        &lt;h2&gt;About Us&lt;/h2&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;section id="services"&gt;
+        &lt;h2&gt;Our Services&lt;/h2&gt;
+        &lt;p&gt;Nulla tincidunt felis vitae odio lacinia, nec efficitur dolor viverra.&lt;/p&gt;
+    &lt;/section&gt;
+    &lt;footer&gt;
+        &lt;p&gt;Copyright &copy; 2024 Example Company. All rights reserved.&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </pre>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><code>&lt;!DOCTYPE html&gt;</code>: Specifies the HTML version being used.</li>
+                <li><code>&lt;html lang="en"&gt;</code>: Defines the root element of the HTML document with the language attribute set to English.</li>
+                <li><code>&lt;head&gt;</code>: Contains meta-information about the HTML document, such as character encoding and viewport settings.</li>
+                <li><code>&lt;title&gt;</code>: Sets the title of the webpage displayed in the browser's title bar or tab.</li>
+                <li><code>&lt;body&gt;</code>: Contains the visible content of the webpage, such as headings, paragraphs, and navigation.</li>
+                <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;footer&gt;</code>: Examples of semantic elements providing meaning to different sections of the webpage.</li>
+                <li><code>&lt;a&gt;</code>: Represents a hyperlink and is used for navigation within the webpage or to external pages.</li>
+                <li><code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>: Used to create an unordered list with list items, commonly used for navigation menus.</li>
+            </ul>
+        </div>
+    </section>
+    <div class="button-container">
+        <button class="learn-basic-html-button" onclick="redirectToBasicHTML()">Learn Basic HTML</button>
+    </div>
+
+    <script>
+        function redirectToBasicHTML() {
+            // Redirect to the basichtml.html page
+            window.location.href = "basichtml.html";
+        }
+    </script>
+</body>
+</html>

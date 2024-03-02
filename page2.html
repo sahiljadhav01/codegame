@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .activity-button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ffd700; /* Yellow */
+            transition: transform 0.3s ease-in-out;
+        }
+        .activity-button:hover {
+            background-color: #e6ac00; /* Darker yellow on hover */
+            transform: translateY(-5px); /* Move button 5px up on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose an Activity</h1>
+        <button class="activity-button" onclick="location.href='learn.2.html'">Learn</button>
+        <button class="activity-button" onclick="location.href='practice.html'">Practice</button>
+        <button class="activity-button" onclick="location.href='http://localhost:3037'">Play with Friends</button>
+        <button class="activity-button" onclick="location.href='quiz.html'">Play Quiz</button>
+    </div>
+</body>
+</html>

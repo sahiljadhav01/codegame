@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="one.css">
+    <link rel="stylesheet" href="one.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Programming Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('image2.jpg'); /* Replace 'background_image.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #a56c6c;
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 10px;
+        }
+        .result {
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="clockContainer">
+        <div id="clock">
+            <div id="second" class="hand"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Java Programming Quiz</h1>
+        <div class="question" id="question"></div>
+        <ul class="options" id="options"></ul>
+        <button id="submitBtn" onclick="submitAnswer()">Submit</button>
+        <div class="result" id="result"></div>
+        <div id="timer" style="text-align: center;"></div>
+    </div>
+
+    <div id="clockContainer">
+        <div id="clockHand"></div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "What is the output of the following code snippet? \n int x = 5; \n int y = 2; \n System.out.println(x + y);",
+                options: ["7", "10", "25", "3"],
+                answer: "7"
+            },
+            // Add more Java-related questions here
+
+            {
+                question: "Which keyword is used to declare a constant in Java?",
+                options: ["final", "const", "static", "constant"],
+                answer: "final"
+            },
+            {
+                question: "What is the correct way to declare a method in Java that does not return any value?",
+                options: ["void myMethod()", "int myMethod()", "String myMethod()", "None of the above"],
+                answer: "void myMethod()"
+            },
+            {
+                question: "What is the output of the following code? \n int[] numbers = {1, 2, 3, 4, 5}; \n System.out.println(numbers.length);",
+                options: ["1", "5", "6", "Compile-time error"],
+                answer: "5"
+            },
+            {
+                question: "Which of the following is the correct way to comment out multiple lines in Java?",
+                options: ["/* This is a comment */", "<!-- This is a comment -->", "// This is a comment", "/* This is a comment */"],
+                answer: "/* This is a comment */"
+            },
+            {
+                question: "What will be the output of the following code? \n String str = \"Java\"; \n System.out.println(str.charAt(2));",
+                options: ["'J'", "'a'", "'v'", "'b'"],
+                answer: "'v'"
+            },
+            {
+                question: "Which method can be used to find the length of a string in Java?",
+                options: ["length()", "size()", "getSize()", "count()"],
+                answer: "length()"
+            },
+            {
+                question: "What does the 'break' keyword do in Java?",
+                options: ["Exits the current loop", "Continues to the next iteration of the loop", "Returns a value from a function", "None of the above"],
+                answer: "Exits the current loop"
+            },
+            {
+                question: "What is the correct syntax to create a constructor in Java?",
+                options: ["constructor MyClass() {}", "public MyClass() {}", "MyClass constructor() {}", "None of the above"],
+                answer: "public MyClass() {}"
+            },
+            {
+                question: "Which of the following statements is used to create an object in Java?",
+                options: ["Object obj = new Object();", "Object obj = Object.create();", "Object obj = Object();", "Object obj = create Object();"],
+                answer: "Object obj = new Object();"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timer; // Timer variable
+
+        function displayQuestion() {
+            const currentQuestion = questions[currentQuestionIndex];
+            document.getElementById("question").innerText = currentQuestion.question;
+            const optionsList = document.getElementById("options");
+            optionsList.innerHTML = "";
+            currentQuestion.options.forEach((option, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `<input type="radio" name="option" value="${index}"> ${option}`;
+                optionsList.appendChild(li);
+            });
+
+            // Start the timer for each question
+            startTimer(40, () => {
+                alert("Time's up!");
+                nextQuestion();
+            });
+        }
+
+        function startTimer(duration, callback) {
+            let timeLeft = duration;
+            clearInterval(timer); // Clear any existing timers
+            timer = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    callback();
+                } else {
+                    document.getElementById("timer").textContent = `${timeLeft} seconds remaining`;
+                    timeLeft--;
+                }
+            }, 1000);
+        }
+
+        function submitAnswer() {
+            clearInterval(timer); // Stop the timer
+            const selectedOption = document.querySelector('input[name="option"]:checked');
+            if (!selectedOption) {
+                alert("Please select an option!");
+                return;
+            }
+            const answerIndex = parseInt(selectedOption.value); // Convert value to integer
+            if (questions[currentQuestionIndex].options[answerIndex] === questions[currentQuestionIndex].answer) {
+                score++;
+            }
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                displayQuestion();
+            } else {
+                displayResult();
+            }
+        }
+
+        function displayResult() {
+            document.getElementById("question").style.display = "none";
+            document.getElementById("options").style.display = "none";
+            document.getElementById("submitBtn").style.display = "none";
+            document.getElementById("timer").style.display = "none";
+            document.getElementById("result").innerText = `Your Score: ${score} out of ${questions.length}`;
+            // Change background image after showing the scorecard
+            setTimeout(() => {
+                document.body.style.backgroundImage = "url('image2.jpg')"; // Replace 'background_image.jpg' with your image path
+            }, 1000); // Change background after 1 second (adjust this value as needed)
+        }
+
+        displayQuestion();
+    </script>
+</body>
+</html>
