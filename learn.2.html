@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Page</title>
+<style>
+/* Styling for buttons */
+.button {
+  background-color: yellow;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin: 20px auto; /* Centering buttons horizontally */
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Styling for individual buttons */
+.html {background-color: yellow;}
+.css {background-color: yellow;}
+.python {background-color: yellow;}
+.java {background-color: yellow;}
+
+/* Styling for body */
+body {
+  background-color: black;
+  text-align: center;
+  padding-top: 50px; /* Add space from the top */
+  position: relative; /* Required for absolute positioning */
+}
+
+/* Styling for the image */
+.image {
+  position: absolute;
+  left: 10px; /* Adjust left position as needed */
+  top: 50%; /* Align image vertically in the middle */
+  transform: translateY(-50%);
+  width: 200px; /* Adjust the size as needed */
+  height: auto;
+}
+</style>
+</head>
+<body>
+
+<!-- Image -->
+<img class="image" src="bear.jpg" alt="Small Image">
+
+<!-- HTML button -->
+<button class="button html" onclick="location.href='learnhtml.html'">HTML</button>
+
+<!-- CSS button -->
+<button class="button css" onclick="location.href='learncss.html'">CSS</button>
+
+<!-- Python button -->
+<button class="button python" onclick="location.href='learpython.html'">Python</button>
+
+<!-- Java button -->
+<button class="button java" onclick="location.href='learjava.html'">Java</button>
+
+</body>
+</html>
