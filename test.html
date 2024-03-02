@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Exercise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .next-button {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Python Exercises</h2>
+
+<div id="exercise-container"></div>
+
+<p id="result"></p>
+
+<button class="next-button" onclick="moveToNextQuestion()">Move to Next Question</button>
+
+<script>
+const questions = [
+    {
+        question: "Complete the code block, print 'YES' if 5 is larger than 2.",
+        answer: "YES"
+    },
+    {
+        question: "What is the output of 'print(3 * '7')'?",
+        answer: "777"
+    },
+    {
+        question: "How do you define a function named 'my_function' in Python?",
+        answer: "def"
+    },
+    {
+        question: "What will 'print(len('python'))' return?",
+        answer: "6"
+    },
+    {
+        question: "How do you access the last element of a list named 'my_list' in Python?",
+        answer: "my_list[-1]"
+    },
+    {
+        question: "What does the 'import random' statement do in Python?",
+        answer: "Imports"
+    },
+    {
+        question: "What is the result of '8 % 3' in Python?",
+        answer: "2"
+    },
+    {
+        question: "How do you check if a key exists in a dictionary named 'my_dict'?",
+        answer: "in"
+    },
+    {
+        question: "How do you concatenate two lists in Python?",
+        answer: "+"
+    },
+    {
+        question: "What is the output of 'print('Hello'[1:])'?",
+        answer: "ello"
+    },
+
+    {
+        question: "Complete the code block, print 'YES' if 5 is larger than 2.",
+        answer: "yes"
+    },
+    // Add more questions here
+
+    {
+        question: "Comments in Python are written with a special character, which one?. __ This is a comment",
+        answer: "#"
+    },
+
+    {
+        question: "What is the keyword used to define a function in Python? - .",
+        answer: "def"
+    },
+
+    {
+        question: "What symbol is used for assignment in Python? - .",
+        answer: "="
+    },
+
+    {
+        question: "Complete the code block, print 'YES' if 5 is larger than 2.",
+        answer: "yes"
+    },
+
+    {
+        question: "How do you denote a comment in Python? -.",
+        answer: "yes"
+    },
+
+    {
+        question: "Complete the code block, print 'YES' if 5 is larger than 2.",
+        answer: "#"
+    },
+
+    {
+        question: "What is the built-in function to find the length of a list in Python? ",
+        answer: "len()"
+    },
+
+    {
+        question: "How do you print something in Python 3?.",
+        answer: "print()"
+    },
+    {
+        question: "What is the keyword used to exit from a loop prematurely in Python?",
+        answer: "break"
+    },
+
+    {
+        question: "How do you declare an empty dictionary in Python?",
+        answer: "{}"
+    },
+
+    {
+        question: "What symbol is used for floor division in Python?",
+        answer: "//"
+    },
+
+    {
+        question: "How do you check if a key exists in a dictionary in Python?",
+        answer: "in"
+    },
+
+    {
+        question: "What method is used to capitalize the first letter of a string in Python?",
+        answer: "capitalize()"
+    },
+
+    {
+        question: "What method is used to convert a string to lowercase in Python?",
+        answer: "lower()"
+    },
+
+    {
+        question: "How do you remove an item from a list by its index in Python?",
+        answer: "pop()"
+    },
+
+    {
+        question: "What symbol is used for exponentiation in Python?",
+        answer: "**"
+    },
+
+    {
+        question: "What is the keyword used to define a class in Python?",
+        answer: "class"
+    },
+
+    {
+        question: "How do you concatenate two lists in Python?",
+        answer: "+"
+    },
+
+    {
+        question: "What method is used to remove leading and trailing whitespace from a string in Python?",
+        answer: "strip()"
+    },
+
+    {
+        question: "What is the built-in function to sort a list in Python?",
+        answer: "sorted()"
+    },
+
+    {
+        question: "How do you check if a value is not equal to another value in Python?",
+        answer: "!="
+    },
+
+    {
+        question: "What method is used to find the index of an item in a list in Python?",
+        answer: "index()"
+    },
+
+    {
+        question: "What is the keyword used to define a conditional statement in Python?",
+        answer: "if"
+    },
+
+    {
+        question: "What method is used to convert a string to uppercase in Python? ",
+        answer: "upper()"
+    },
+
+    {
+        question: "How do you check if a string starts with a specific substring in Python?.",
+        answer: "startswith()"
+    },
+
+    {
+        question: "What is the keyword used to iterate over items in a list in Python?",
+        answer: "for"
+    },
+
+    {
+        question: "How do you check if a value is present in a set in Python?",
+        answer: "in"
+    },
+
+    {
+        question: "What method is used to split a string into a list of substrings in Python? ",
+        answer: "split()"
+    },
+
+    {
+        question: "What is the built-in function to find the maximum value in a list in Python?",
+        answer: "max()"
+    },
+
+
+    {
+        question: "How do you check if a variable is of a certain data type in Python?",
+        answer: "isinstance()"
+    },
+
+    {
+        question: "What symbol is used for modulus division in Python?",
+        answer: "%"
+    },
+
+    {
+        question: "How do you remove all occurrences of a value from a list in Python? ",
+        answer: "remove()"
+    },
+
+    {
+        question: "What is the keyword used to define a while loop in Python?",
+        answer: "while"
+    },
+
+    {
+        question: "What method is used to add an element to the end of a list in Python?",
+        answer: "append()"
+    },
+
+    {
+        question: "How do you find the absolute value of a number in Python?",
+        answer: "abs()"
+    },
+
+    {
+        question: "What is the keyword used to define a function argument with a default value in Python?",
+        answer: "default"
+    },
+
+    {
+        question: "How do you reverse a list in Python? ",
+        answer: "reverse()"
+    },
+
+    {
+        question: "What is the built-in function to find the minimum value in a list in Python? ",
+        answer: "min()"
+    },
+
+    {
+        question: "How do you convert a string to an integer in Python?",
+        answer: "int()"
+    },
+
+    {
+        question: "What method is used to join elements of a list into a single string in Python? .",
+        answer: "join()"
+    },
+
+    {
+        question: "What is the keyword used to exit from the current function in Python?",
+        answer: "return"
+    },
+
+    {
+        question: "How do you check if a variable is None in Python?",
+        answer: "is None"
+    },
+
+    {
+        question: "What method is used to count the occurrences of a value in a list in Python?",
+        answer: "count()"
+    },
+    // Add more questions here...
+    {
+        question: "What keyword is used to declare a class in Java?",
+        answer: "class"
+    },
+
+    {
+        question: "How do you declare a variable in Java without initializing it?",
+        answer: "null"
+    },
+
+    {
+        question: "What keyword is used to define a method in Java?",
+        answer: "void"
+    },
+
+    {
+        question: "How do you declare a constant variable in Java?",
+        answer: "final"
+    },
+
+    {
+        question: "What symbol is used for assignment in Java?",
+        answer: "="
+    },
+
+    {
+        question: "How do you create a new instance of a class in Java?",
+        answer: "new"
+    },
+
+    {
+        question: "What keyword is used to define a constructor in Java? ",
+        answer: "constructor"
+    },
+
+    {
+        question: "How do you declare an array in Java?",
+        answer: "[]" , answer:"{}"
+    },
+
+    {
+        question: "What symbol is used for equality comparison in Java?",
+        answer: "=="
+    },
+
+    {
+        question: "How do you print something to the console in Java? ",
+        answer: "System.out.println()"
+    },
+
+    {
+        question: "What keyword is used to define a loop in Java? ",
+        answer: "for" , answer:"do-while" , answer:"while"
+    },
+
+    {
+        question: "How do you declare a method to be accessible from other classes, but not directly instantiable? ",
+        answer: "static"
+    },
+
+    {
+        question: "What keyword is used to break out of a loop in Java? ",
+        answer: "break"
+    },
+
+    {
+        question: "How do you declare a variable that can hold any type of object in Java?",
+        answer: "Object"
+    },
+
+    {
+        question: "What keyword is used to handle exceptions in Java?",
+        answer: "try-catch"
+    },
+
+    {
+        question: "How do you declare a method to be overridden in a subclass in Java?",
+        answer: "abstract"
+    },
+
+    {
+        question: "What symbol is used to access members of an object in Java?",
+        answer: "."
+    },
+
+    {
+        question: "How do you convert a string to an integer in Java?",
+        answer: "Integer.parseInt()"
+    },
+
+    {
+        question: "What keyword is used to indicate that a method does not return a value in Java?",
+        answer: "void"
+    },
+
+    {
+        question: "How do you exit from a program in Java?",
+        answer: "System.exit()"
+    },
+
+    {
+        question: "What keyword is used to extend a class in Java? ",
+        answer: "extends"
+    },
+
+    {
+        question: "How do you declare an interface in Java? ",
+        answer: "interface"
+    },
+
+    {
+        question: "What keyword is used to implement an interface in Java? ",
+        answer: "What keyword is used to implement an interface in Java?"
+    },
+
+    {
+        question: "How do you declare a method that can be accessed without creating an instance of the class in Java?",
+        answer: "static"
+    },
+
+    {
+        question: "What symbol is used for logical AND in Java?",
+        answer: "&&"
+    },
+
+    {
+        question: "How do you declare a method that can be accessed only within the same package in Java? ",
+        answer: "default (package-private)"
+    },
+
+    {
+        question: "What keyword is used to indicate that a method may throw exceptions in Java?",
+        answer: "throws"
+    },
+
+    {
+        question: "How do you declare a method that overrides a method from a superclass in Java?",
+        answer: "@Override"
+    },
+
+    {
+        question: "What symbol is used for logical OR in Java?",
+        answer: "||"
+    },
+
+    {
+        question: "How do you declare a method to be private in Java?",
+        answer: "private"
+    },
+
+    {
+        question: "What keyword is used to indicate that a class cannot be subclassed in Java?",
+        answer: "final"
+    },
+
+    {
+        question: "How do you declare a method to be protected in Java?",
+        answer: "protected"
+    },
+
+    {
+        question: "What symbol is used to represent bitwise AND in Java? ",
+        answer: "&"
+    },
+
+    {
+        question: "How do you declare a variable that cannot be modified after initialization in Java?",
+        answer: "final"
+    },
+
+    {
+        question: "How do you declare a method to be synchronized in Java?",
+        answer: "synchronized"
+    },
+
+    {
+        question: "What symbol is used to represent bitwise OR in Java?",
+        answer: "|"
+    },
+
+    {
+        question: "How do you declare a method to be public in Java?",
+        answer: "public"
+    },
+
+    {
+        question: "What keyword is used to initialize an object's state in Java?",
+        answer: "this"
+    },
+
+    {
+        question: "How do you declare a method that cannot be overridden in Java?",
+        answer: "final"
+    },
+
+    {
+        question: "What tag is used to define a hyperlink in HTML? ",
+        answer: "<a>"
+    },
+
+    {
+        question: "How do you create a line break in HTML??",
+        answer: "<br>"
+    },
+
+    {
+        question: "What tag is used to define a paragraph in HTML?",
+        answer: "<p>"
+    },
+
+    {
+        question: "How do you create a horizontal rule in HTML?",
+        answer: "<hr>"
+    },
+
+    {
+        question: "What tag is used to define a heading in HTML?",
+        answer: "<h1>" ,answer: "<h2>", answer: "<h3>", answer: "<h4>", answer: "<h1> to <h6>"
+    },
+
+    {
+        question: "How do you create a numbered list in HTML?",
+        answer: "<ol>"
+    },
+
+    {
+        question: "What tag is used to define an image in HTML?",
+        answer: "<img>"
+    },
+
+    {
+        question: "How do you create an unordered list in HTML?",
+        answer: "<ul>"
+    },
+
+    {
+        question: "What tag is used to define a table in HTML?",
+        answer: "<table>"
+    },
+
+    {
+        question: "How do you create a table row in HTML? ",
+        answer: "<tr>"
+    },
+
+    {
+        question: "What tag is used to define a table heading in HTML? ",
+        answer: "<th>"
+    },
+
+    {
+        question: "How do you create a table data/cell in HTML?",
+        answer: "<td>"
+    },
+
+    {
+        question: "What tag is used to define a form in HTML? ",
+        answer: "<form>"
+    },
+
+    {
+        question: "How do you create a text input field in HTML? ",
+        answer: "<input>"
+    },
+
+    {
+        question: "What tag is used to define a button in HTML?",
+        answer: "<button>"
+    },
+
+    {
+        question: "How do you create a drop-down/select menu in HTML? ",
+        answer: "<select>"
+    },
+
+    {
+        question: "What tag is used to define an option in a drop-down/select menu in HTML?",
+        answer: "<option>"
+    },
+
+    {
+        question: "What tag is used to define a division or section in HTML? ",
+        answer: "<div>"
+    },
+
+    {
+        question: "What tag is used to define a span of text in HTML?",
+        answer: "<span>"
+    },
+
+    {
+        question: "What tag is used to define a line break without any extra space in HTML? ",
+        answer: "<br>"
+    },
+
+    {
+        question: "What tag is used to define the title of a webpage in HTML?",
+        answer: "<title>"
+    },
+
+    {
+        question: "What tag is used to define a subscripted text in HTML?",
+        answer: "<sub>"
+    },
+
+    {
+        question: "How do you create a superscripted text in HTML?",
+        answer: "<sup>"
+    },
+
+    {
+        question: "What tag is used to define a footer in HTML?",
+        answer: "<footer>"
+    },
+
+    {
+        question: "What tag is used to define an ordered list item in HTML?",
+        answer: "<li>"
+    },
+
+    {
+        question: "How do you create a text area in HTML?",
+        answer: "<textarea>"
+    },
+
+    {
+        question: "What tag is used to define a header in HTML?",
+        answer: "<header>"
+    },
+
+    {
+        question: "How do you create an iframe in HTML?",
+        answer: "<iframe>"
+    },
+
+    {
+        question: "What tag is used to define an abbreviation or acronym in HTML? ",
+        answer: "<abbr>"
+    },
+
+    {
+        question: "How do you create a navigation menu in HTML?",
+        answer: "<nav>"
+    },
+
+    {
+        question: "How do you create a definition description in HTML?",
+        answer: "<dd>"
+    },
+
+    {
+        question: "What tag is used to define a section of navigation links in HTML?",
+        answer: "<nav>"
+    },
+
+    {
+        question: "How do you create a progress bar in HTML?",
+        answer: "<progress>"
+    }
+
+    
+
+
+
+
+
+];
+
+let currentQuestionIndex = 0;
+
+function displayQuestion(question) {
+    const exerciseContainer = document.getElementById("exercise-container");
+    exerciseContainer.innerHTML = `
+        <p>${question.question}</p>
+        <p><code> </code> <input type="text" id="answer"></p>
+        <button onclick="checkAnswer()">Submit Answer</button>
+    `;
+}
+
+function checkAnswer() {
+    var answer = document.getElementById("answer").value.trim().toUpperCase();
+    if (answer === questions[currentQuestionIndex].answer.toUpperCase()) {
+        document.getElementById("result").innerText = "Correct! Well done.";
+        document.querySelector('.next-button').style.display = 'block';
+    } else {
+        document.getElementById("result").innerText = "Incorrect. Try again.";
+    }
+}
+
+function moveToNextQuestion() {
+    currentQuestionIndex++;
+    document.getElementById("result").innerText = '';
+    document.querySelector('.next-button').style.display = 'none';
+    if (currentQuestionIndex < questions.length) {
+        displayQuestion(questions[currentQuestionIndex]);
+    } else {
+        document.getElementById("exercise-container").innerHTML = "<p>No more questions!</p>";
+    }
+}
+
+// Display the first question initially
+displayQuestion(questions[currentQuestionIndex]);
+</script>
+
+</body>
+</html>
